@@ -12,14 +12,11 @@ namespace chants
         std::string _name;
         std::string _description;
         int _value;
-        bool _isOffensive;
 
     public:
-        bool hasBeenUsed;
-        Asset(std::string name, std::string description, int value, bool isOffensive);
+        Asset(std::string name, std::string description, int value);
         std::string GetName() const;
         string GetMessage();
         int GetValue();
-        bool isOffensive();
     };
 }

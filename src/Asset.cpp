@@ -2,13 +2,11 @@
 
 namespace chants
 {
-    Asset::Asset(string name, string description, int value, bool isOffensive)
+    Asset::Asset(string name, string description, int value)
     {
         _name = name;
         _description = description;
         _value = value;
-        _isOffensive = isOffensive;
-        hasBeenUsed = false;
     }
 
     std::string Asset::GetName() const
@@ -24,11 +22,6 @@ namespace chants
     int Asset::GetValue()
     {
         return _value;
-    }
-
-    bool Asset::isOffensive()
-    {
-        return _isOffensive;
     }
 
 }

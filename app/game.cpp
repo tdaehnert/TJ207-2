@@ -62,14 +62,6 @@ void AtNode(Node &currentNode, Player &player)
             cout << i + 1 << ". " << currentNode.GetConnections()[i]->GetName() << endl;
         }
 
-        // Debug: Print current node's connections
-        cout << "\nDebug: Connections for " << currentNode.GetName() << ":\n";
-        for (const auto &conn : currentNode.GetConnections())
-        {
-            cout << "  - " << conn->GetName() << " (ID: " << conn->GetId() << ")\n";
-        }
-
-        // Interact with specific nodes
         if (currentNode.GetId() == 6 && !player.HasAsset("Fishing Pole"))
         {
             cout << "You see a Fishing Pole here. Do you want to pick it up? (yes/no): ";
@@ -79,7 +71,7 @@ void AtNode(Node &currentNode, Player &player)
 
             if (choice == "yes" || choice == "y")
             {
-                Asset fishingPole("Fishing Pole", "A tool to fish with.", 10, false);
+                Asset fishingPole("Fishing Pole", "A tool to fish with.", 10);
                 player.AddAsset(fishingPole);
                 cout << "You picked up the Fishing Pole!" << endl;
             }
@@ -93,7 +85,7 @@ void AtNode(Node &currentNode, Player &player)
 
             if (choice == "yes" || choice == "y")
             {
-                Asset partyHat("Party Hat", "A fun party accessory.", 5, false);
+                Asset partyHat("Party Hat", "A fun party accessory.", 5);
                 player.AddAsset(partyHat);
                 cout << "You caught a Party Hat!" << endl;
             }
